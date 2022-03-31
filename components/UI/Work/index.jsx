@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Container from '../../Layout/Container'
 import cls from './Work.module.scss'
@@ -10,8 +10,18 @@ import {
   RightDecoratorSvg,
   StoreSvg,
 } from '../../../utils/svgs'
+import { useWindowSize } from '../../../utils/useWindowSize'
 
 function Work() {
+  const size = useWindowSize()
+  const [windowWidth, setWindowWidth] = useState('')
+
+  useEffect(() => {
+    if (size.width <= 960) {
+      setWindowWidth('lg')
+    }
+  }, [size])
+
   return (
     <section className={cls.wrapper}>
       <Container>
@@ -72,7 +82,11 @@ function Work() {
           <section className={cls.leftBottom}>
             <div className={cls.image}>
               <div className={cls.decorator}>
-                <LeftBottomDecorator />
+                {windowWidth === 'lg' ? (
+                  <LeftDecoratorSvg />
+                ) : (
+                  <LeftBottomDecorator />
+                )}
               </div>
               <Image
                 src='/images/work-3.png'

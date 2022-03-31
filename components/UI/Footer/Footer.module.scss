@@ -9,11 +9,17 @@
     align-items: center;
     .logo {
       width: 48%;
+      @include lg {
+        width: 35%;
+      }
     }
     .terms {
       width: 52%;
       display: flex;
       justify-content: space-between;
+      @include lg {
+        width: 65%;
+      }
       .nav__list {
         .nav__item {
           margin-bottom: 23px;

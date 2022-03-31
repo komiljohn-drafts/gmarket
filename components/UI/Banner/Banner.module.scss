@@ -12,6 +12,9 @@
     }
     .content {
       max-width: 445px;
+      @include lg {
+        max-width: 365px;
+      }
       .title {
         @include font(48px, 58px, 600);
         letter-spacing: -1.95918px;

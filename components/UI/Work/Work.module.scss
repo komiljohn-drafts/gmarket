@@ -3,6 +3,7 @@
 .wrapper {
   padding: 70px 0 70px;
   .work {
+    // Left Top
     .left {
       display: flex;
       align-items: center;
@@ -12,14 +13,23 @@
       @include xl {
         gap: 7%;
       }
+      @include lg {
+        padding-left: 0;
+        flex-direction: column;
+      }
       .decorator {
         top: 0;
         left: 0;
         transform: rotate(-3deg);
         @include xl {
-          transform: scale(0.8) rotate(-4deg);
           top: -15px;
           left: -25px;
+          transform: scale(0.8) rotate(-4deg);
+        }
+        @include lg {
+          top: -8px;
+          left: -18px;
+          transform: scale(1) rotate(-8deg);
         }
       }
       .small {
@@ -44,6 +54,7 @@
         align-items: center;
       }
     }
+    // Right
     .right {
       display: flex;
       align-items: center;
@@ -55,6 +66,10 @@
         gap: 6%;
         padding-left: 35px;
       }
+      @include lg {
+        padding-left: 0;
+        flex-direction: column;
+      }
       .image {
         .decorator {
           top: 0;
@@ -65,6 +80,9 @@
             right: -18px;
             transform: scale(0.8) rotate(3deg);
           }
+          @include lg {
+            transform: scale(1) rotate(3deg);
+          }
         }
         .small {
           left: 0px;
@@ -72,6 +90,7 @@
         }
       }
     }
+    // Left Bottom
     .leftBottom {
       display: flex;
       align-items: center;
@@ -79,6 +98,10 @@
       gap: 9%;
       @include xl {
         gap: 7%;
+      }
+      @include lg {
+        flex-direction: column;
+        padding-left: 0;
       }
       .decorator {
         bottom: 5px;
@@ -88,6 +111,11 @@
           bottom: -3px;
           left: 15px;
           transform: scale(0.8) rotate(-5deg);
+        }
+        @include lg {
+          top: -12px;
+          left: 0px;
+          transform: scale(1) rotate(-5deg);
         }
       }
       .small {
@@ -99,6 +127,10 @@
       max-width: 533px;
       @include xl {
         max-width: 495px;
+      }
+      @include lg {
+        max-width: 700px;
+        text-align: center;
       }
       .title {
         margin-bottom: 18px;
