@@ -11,6 +11,7 @@ import {
   StoreSvg,
 } from '../../../utils/svgs'
 import { useWindowSize } from '../../../utils/useWindowSize'
+import { motion } from 'framer-motion'
 
 function Work() {
   const size = useWindowSize()
@@ -26,7 +27,17 @@ function Work() {
     <section className={cls.wrapper}>
       <Container>
         <div className={cls.work}>
-          <section className={cls.left}>
+          <motion.section
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            variants={{
+              visible: { opacity: 1, x: 0 },
+              hidden: { opacity: 0, x: '-200px' },
+            }}
+            className={cls.left}
+          >
             <div className={cls.image}>
               <div className={cls.decorator}>
                 <LeftDecoratorSvg />
@@ -51,8 +62,18 @@ function Work() {
                 and ZIP code shows you the most relevant prices for you.{' '}
               </p>
             </div>
-          </section>
-          <section className={cls.right}>
+          </motion.section>
+          <motion.section
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            variants={{
+              visible: { opacity: 1, x: 0 },
+              hidden: { opacity: 0, x: '200px' },
+            }}
+            className={cls.right}
+          >
             <div className={cls.image}>
               <div className={cls.decorator}>
                 <RightDecoratorSvg />
@@ -78,8 +99,18 @@ function Work() {
                 experiences with your local hospital.
               </p>
             </div>
-          </section>
-          <section className={cls.leftBottom}>
+          </motion.section>
+          <motion.section
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            variants={{
+              visible: { opacity: 1, x: 0 },
+              hidden: { opacity: 0, x: '-200px' },
+            }}
+            className={cls.leftBottom}
+          >
             <div className={cls.image}>
               <div className={cls.decorator}>
                 {windowWidth === 'lg' ? (
@@ -109,7 +140,7 @@ function Work() {
                 again.
               </p>
             </div>
-          </section>
+          </motion.section>
         </div>
       </Container>
     </section>

@@ -1,13 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
 import Container from '../../Layout/Container'
 import cls from './Banner.module.scss'
 import Input from '../Input'
 import Button from '../Button'
+import { useAnimation, motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 function Banner() {
+  const controls = useAnimation()
+  const [ref, inView] = useInView({ rootMargin: '40%' })
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
+
+  const squareVariants = {
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, y: '-100px' },
+  }
+
   return (
-    <section className={cls.wrapper}>
+    <motion.section
+      ref={ref}
+      initial='hidden'
+      animate={controls}
+      variants={squareVariants}
+      className={cls.wrapper}
+    >
       <Container>
         <div className={cls.banner}>
           <div className={cls.content}>
@@ -33,7 +55,7 @@ function Banner() {
           </div>
         </div>
       </Container>
-    </section>
+    </motion.section>
   )
 }
 

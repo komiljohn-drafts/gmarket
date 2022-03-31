@@ -1,6 +1,7 @@
 import React from 'react'
 import Container from '../../Layout/Container'
 import cls from './Offers.module.scss'
+import { motion } from 'framer-motion'
 import {
   ArrowDecorationSvg,
   DocSvg,
@@ -43,17 +44,60 @@ function Offers() {
     <section className={cls.wrapper}>
       <Container>
         <div className={cls.offers}>
-          <div className={cls.arrow}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView='visible'
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.4 }}
+            variants={{
+              visible: { opacity: 1 },
+              hidden: { opacity: 0 },
+            }}
+            className={cls.arrow}
+          >
             <ArrowDecorationSvg />
-          </div>
-          <h2 className={cls.title}>What do we offer?</h2>
-          <p className={cls.subtitle}>
+          </motion.div>
+          <motion.h2
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            variants={{
+              visible: { y: 0, opacity: 1 },
+              hidden: { y: '300px', opacity: 0 },
+            }}
+            className={cls.title}
+          >
+            What do we offer?
+          </motion.h2>
+          <motion.p
+            className={cls.subtitle}
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            variants={{
+              visible: { y: 0, opacity: 1 },
+              hidden: { y: '300px', opacity: 0 },
+            }}
+          >
             The U.S. healthcare system is broken. Patients are too often left
             feeling powerless. At Finestra, we know there is a better way.
             Patients deserve control.
-          </p>
+          </motion.p>
           {data.map((offer) => (
-            <section key={offer.id} className={cls.offer}>
+            <motion.section
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              variants={{
+                visible: { y: 0, opacity: 1 },
+                hidden: { y: '300px', opacity: 0 },
+              }}
+              key={offer.id}
+              className={cls.offer}
+            >
               <div
                 style={{ backgroundColor: offer.bgColor }}
                 className={cls.image}
@@ -62,8 +106,7 @@ function Offers() {
               </div>
               <h3 dangerouslySetInnerHTML={{ __html: offer.title }} />
               <p>{offer.subtitle}</p>
-              <div></div>
-            </section>
+            </motion.section>
           ))}
         </div>
       </Container>
