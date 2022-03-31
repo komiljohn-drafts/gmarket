@@ -1,0 +1,29 @@
+@import '../../../styles/mixins';
+
+.wrapper {
+  background: #000;
+  .nav {
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      display: flex;
+      p {
+        @include font(17px, 30px, 800, #fff);
+        margin-left: 16px;
+      }
+    }
+    &__list {
+      display: flex;
+      gap: 25px;
+    }
+    &__item {
+      a {
+        color: #fff;
+        @include font(16px, 16px, 500, #fff);
+        opacity: 0.84;
+      }
+    }
+  }
+}

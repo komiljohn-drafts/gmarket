@@ -1,0 +1,17 @@
+@import '../../../styles/mixins';
+
+.input {
+  outline: none;
+  width: 100%;
+  margin-right: 6px;
+  padding: 15px 23px;
+  border: none;
+  background-color: rgb(0, 0, 0, 0.07);
+  @include font(16px, 16px, 400, rgb(0, 0, 0, 0.46));
+  border-radius: 25px;
+  font-family: 'Epilogue', sans-serif;
+  &::placeholder {
+    font-family: 'Epilogue', sans-serif;
+    @include font(16px, 16px, 400, rgb(0, 0, 0, 0.46));
+  }
+}

@@ -1,0 +1,19 @@
+@import '../../../styles/mixins';
+
+// .button {
+// background-color: #2962ff;
+// padding: 15.5px, 23px;
+// height: 47px;
+// color: #fff;
+// display: inline-block;
+.button {
+  border-radius: 25px;
+  background-color: #2962ff;
+  outline: none;
+  border: none;
+  font-family: 'Epilogue', sans-serif;
+  padding: 15.5px 24px;
+  // height: 47px;
+  @include font(16px, 16px, 600, #fff);
+}
+// }

@@ -1,0 +1,38 @@
+@mixin font($size, $height, $weight, $color: #000) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  color: $color;
+}
+
+$screen-xs: 380px;
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1270px;
+
+@mixin xs {
+  @media (max-width: #{$screen-sh}) {
+    @content;
+  }
+}
+@mixin sm {
+  @media (max-width: #{$screen-sm}) {
+    @content;
+  }
+}
+@mixin md {
+  @media (max-width: #{$screen-md}) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (max-width: #{$screen-lg}) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (max-width: #{$screen-xl}) {
+    @content;
+  }
+}
