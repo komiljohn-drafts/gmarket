@@ -4,13 +4,24 @@
   padding: 149px 0 165px;
   background: #000;
   color: #fff;
+  @include md {
+    padding: 89px 0 105px;
+  }
   .footer {
     display: flex;
     align-items: center;
+    @include md {
+      flex-direction: column;
+    }
     .logo {
       width: 48%;
       @include lg {
         width: 35%;
+      }
+      @include md {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
       }
     }
     .terms {
@@ -19,6 +30,9 @@
       justify-content: space-between;
       @include lg {
         width: 65%;
+      }
+      @include lg {
+        width: 100%;
       }
       .nav__list {
         .nav__item {

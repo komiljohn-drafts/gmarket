@@ -2,6 +2,9 @@
 
 .wrapper {
   padding: 105px 0 73px;
+  @include md {
+    padding: 65px 0 53px;
+  }
   .banner {
     display: flex;
     justify-content: space-between;
@@ -10,10 +13,17 @@
     @include xl {
       gap: 30px;
     }
+    @include md {
+      flex-direction: column-reverse;
+    }
     .content {
       max-width: 445px;
       @include lg {
         max-width: 365px;
+      }
+      @include md {
+        max-width: 100%;
+        text-align: center;
       }
       .title {
         @include font(48px, 58px, 600);
@@ -47,6 +57,11 @@
         padding: 0 10px;
         @include font(17px, 30px, 500, rgba(0, 0, 0, 0.59));
       }
+    }
+  }
+  .image {
+    @include md {
+      width: 85%;
     }
   }
 }
