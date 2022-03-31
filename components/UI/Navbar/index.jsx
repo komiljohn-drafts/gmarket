@@ -4,6 +4,7 @@ import Container from '../../Layout/Container'
 import cls from './Navbar.module.scss'
 import { useWindowSize } from '../../../utils/useWindowSize'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const boxWrapperVariants = {
   open: {
@@ -47,7 +48,6 @@ function Navbar() {
   const size = useWindowSize()
   const [showBurger, setShowBurger] = useState(false)
   const [showBurgerMenu, setShowBurgerMenu] = useState(false)
-  const [show, setShow] = useState(false)
 
   useEffect(() => {
     if (size.width <= 720) {
@@ -58,19 +58,22 @@ function Navbar() {
     }
   }, [size])
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShow(true)
-    }, 1500)
-  }, [])
-
   return (
-    <motion.div className={cls.wrapper} id='wrapper'>
+    <div className={cls.wrapper}>
       <Container>
         <nav className={cls.nav}>
           <div className={cls.logo}>
-            <Image src='/icons/logo.svg' width={32} height={32} alt='logo' />
-            <p>finestra</p>
+            <Link href='/'>
+              <>
+                <Image
+                  src='/icons/logo.svg'
+                  width={32}
+                  height={32}
+                  alt='logo'
+                />
+                <span>finestra</span>
+              </>
+            </Link>
           </div>
           {showBurger ? (
             <div className={cls.burger__wrapper}>
@@ -127,21 +130,21 @@ function Navbar() {
         className={cls.burger__menu}
       >
         <ul>
-          <li>
+          <li onClick={() => setShowBurgerMenu(false)}>
             <a href='#'>Home</a>
           </li>
-          <li>
+          <li onClick={() => setShowBurgerMenu(false)}>
             <a href='#'>Blog</a>
           </li>
-          <li>
+          <li onClick={() => setShowBurgerMenu(false)}>
             <a href='#'>About Us</a>
           </li>
-          <li>
+          <li onClick={() => setShowBurgerMenu(false)}>
             <a href='#'>Contact</a>
           </li>
         </ul>
       </motion.div>
-    </motion.div>
+    </div>
   )
 }
 

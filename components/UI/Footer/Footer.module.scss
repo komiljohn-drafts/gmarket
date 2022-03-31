@@ -15,6 +15,9 @@
     }
     .logo {
       width: 48%;
+      img {
+        cursor: pointer;
+      }
       @include lg {
         width: 35%;
       }
@@ -47,6 +50,10 @@
           }
           a {
             @include font(16px, 16px, 600, rgba(255, 255, 255, 0.58));
+            transition: 0.3s ease;
+            &:hover {
+              color: #fff;
+            }
           }
         }
       }
@@ -60,6 +67,10 @@
         a {
           @include font(16px, 16px, 500, rgba(255, 255, 255, 0.58));
           letter-spacing: -0.4px;
+          transition: 0.3s ease;
+          &:hover {
+            color: #fff;
+          }
         }
         p {
           @include font(17px, 17px, 700, #fff);

@@ -2,6 +2,7 @@ import React from 'react'
 import Container from '../../Layout/Container'
 import cls from './Footer.module.scss'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function Footer() {
   return (
@@ -9,7 +10,9 @@ function Footer() {
       <Container>
         <div className={cls.footer}>
           <div className={cls.logo}>
-            <Image src='/icons/logo.svg' width={76} height={79} alt='logo' />
+            <Link href='/'>
+              <Image src='/icons/logo.svg' width={76} height={79} alt='logo' />
+            </Link>
           </div>
           <div className={cls.terms}>
             <ul className={cls.nav__list}>
