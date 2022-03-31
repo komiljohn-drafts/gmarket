@@ -5,14 +5,22 @@
   .work {
     .left {
       display: flex;
-      gap: 9%;
       align-items: center;
       margin-bottom: 107px;
       padding-left: 25px;
+      gap: 9%;
+      @include xl {
+        gap: 7%;
+      }
       .decorator {
         top: 0;
         left: 0;
         transform: rotate(-3deg);
+        @include xl {
+          transform: scale(0.8) rotate(-4deg);
+          top: -15px;
+          left: -25px;
+        }
       }
       .small {
         right: 12px;
@@ -41,13 +49,22 @@
       align-items: center;
       flex-direction: row-reverse;
       margin-bottom: 143px;
-      gap: 9%;
       padding-left: 100px;
+      gap: 9%;
+      @include xl {
+        gap: 6%;
+        padding-left: 35px;
+      }
       .image {
         .decorator {
           top: 0;
           right: 0;
           transform: rotate(4deg);
+          @include xl {
+            top: -17px;
+            right: -18px;
+            transform: scale(0.8) rotate(3deg);
+          }
         }
         .small {
           left: 0px;
@@ -57,13 +74,21 @@
     }
     .leftBottom {
       display: flex;
-      gap: 9%;
       align-items: center;
       padding-left: 25px;
+      gap: 9%;
+      @include xl {
+        gap: 7%;
+      }
       .decorator {
         bottom: 5px;
         left: 25px;
         transform: rotate(-5deg);
+        @include xl {
+          bottom: -3px;
+          left: 15px;
+          transform: scale(0.8) rotate(-5deg);
+        }
       }
       .small {
         right: 34px;
@@ -72,6 +97,9 @@
     }
     .content {
       max-width: 533px;
+      @include xl {
+        max-width: 495px;
+      }
       .title {
         margin-bottom: 18px;
         letter-spacing: -1px;
