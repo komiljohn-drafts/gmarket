@@ -100,9 +100,7 @@ function Work() {
             </div>
             <div className={cls.content}>
               <h2 className={cls.title}>
-                Securely&nbsp;
-                <span>store</span>
-                &nbsp;healthcare information
+                Securely <span>store</span> &nbsp;healthcare information
               </h2>
               <p className={cls.subtitle}>
                 We utilize bank-level security, 256-bit encryption to securely

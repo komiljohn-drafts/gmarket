@@ -34,7 +34,12 @@
       @include lg {
         width: 100%;
       }
+      @include sm {
+        flex-direction: column;
+        text-align: center;
+      }
       .nav__list {
+        margin-bottom: 50px;
         .nav__item {
           margin-bottom: 23px;
           &:last-child {
@@ -48,6 +53,9 @@
       .contacts {
         .call {
           margin-bottom: 39px;
+          @include sm {
+            margin-bottom: 25px;
+          }
         }
         a {
           @include font(16px, 16px, 500, rgba(255, 255, 255, 0.58));
