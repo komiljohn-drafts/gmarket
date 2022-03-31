@@ -31,7 +31,7 @@ function Work() {
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             variants={{
               visible: { opacity: 1, x: 0 },
               hidden: { opacity: 0, x: '-200px' },
@@ -67,7 +67,7 @@ function Work() {
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             variants={{
               visible: { opacity: 1, x: 0 },
               hidden: { opacity: 0, x: '200px' },
@@ -104,7 +104,7 @@ function Work() {
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             variants={{
               visible: { opacity: 1, x: 0 },
               hidden: { opacity: 0, x: '-200px' },

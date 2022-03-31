@@ -48,7 +48,7 @@ function Offers() {
             initial={{ opacity: 0 }}
             whileInView='visible'
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.4 }}
+            transition={{ duration: 1, delay: 0.2 }}
             variants={{
               visible: { opacity: 1 },
               hidden: { opacity: 0 },
@@ -61,7 +61,7 @@ function Offers() {
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             variants={{
               visible: { y: 0, opacity: 1 },
               hidden: { y: '300px', opacity: 0 },
@@ -75,7 +75,7 @@ function Offers() {
             initial='hidden'
             whileInView='visible'
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             variants={{
               visible: { y: 0, opacity: 1 },
               hidden: { y: '300px', opacity: 0 },
@@ -90,7 +90,7 @@ function Offers() {
               initial='hidden'
               whileInView='visible'
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               variants={{
                 visible: { y: 0, opacity: 1 },
                 hidden: { y: '300px', opacity: 0 },
