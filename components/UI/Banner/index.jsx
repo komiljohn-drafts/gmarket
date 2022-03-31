@@ -4,30 +4,19 @@ import Container from '../../Layout/Container'
 import cls from './Banner.module.scss'
 import Input from '../Input'
 import Button from '../Button'
-import { useAnimation, motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+import { motion } from 'framer-motion'
 
 function Banner() {
-  const controls = useAnimation()
-  const [ref, inView] = useInView({ rootMargin: '40%' })
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible')
-    }
-  }, [controls, inView])
-
-  const squareVariants = {
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-    hidden: { opacity: 0, y: '-100px' },
-  }
-
   return (
     <motion.section
-      ref={ref}
       initial='hidden'
-      animate={controls}
-      variants={squareVariants}
+      whileInView='visible'
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.4 }}
+      variants={{
+        visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+        hidden: { opacity: 0, y: '-100px' },
+      }}
       className={cls.wrapper}
     >
       <Container>
