@@ -2,7 +2,7 @@ import React from 'react'
 import cls from './Layout.module.scss'
 
 function Layout({ children }) {
-  return <main className={cls.layout}>{children}</main>
+  return <div className={cls.layout}>{children}</div>
 }
 
 export default Layout
