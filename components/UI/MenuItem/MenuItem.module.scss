@@ -1,0 +1,28 @@
+@import '../../../styles/mixins';
+
+.item {
+  padding: 16px 5px;
+  position: relative;
+  @include flex(_, flex-start);
+  gap: 24px;
+  svg {
+    path {
+      fill: #2e3456;
+    }
+  }
+  p {
+    @include font(14px, 116.3%, 500, rgba($color: #000, $alpha: 0.5));
+    letter-spacing: -0.01em;
+  }
+  &.link {
+    border-top: 1px solid #e6e7eb;
+  }
+  svg:last-child {
+    position: absolute;
+    right: 0;
+    top: 18px;
+    path {
+      fill: #c0c2cc;
+    }
+  }
+}
