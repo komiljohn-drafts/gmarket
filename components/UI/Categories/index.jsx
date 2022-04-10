@@ -1,5 +1,5 @@
 import React from 'react'
-import { FilterSvg } from '../../../utils/svgs'
+import { ArrowBottomSvg, FilterSvg } from '../../../utils/svgs'
 import cls from './Categories.module.scss'
 
 export default function Categories() {
@@ -16,7 +16,10 @@ export default function Categories() {
         <li>Beverange</li>
         <li>Snacks</li>
         <li>Households</li>
-        <li className={cls.more}>More</li>
+        <li className={cls.more}>
+          <p>More</p>
+          <ArrowBottomSvg />
+        </li>
       </ul>
     </section>
   )

@@ -5,14 +5,33 @@
   position: relative;
   @include flex(_, flex-start);
   gap: 24px;
+  transition: 0.3s ease;
+  &:hover {
+    cursor: pointer;
+    p {
+      color: rgba($color: #000, $alpha: 0.7);
+    }
+    svg g {
+      opacity: 0.7;
+    }
+    svg:last-child {
+      path {
+        fill: var(--primary-color);
+      }
+    }
+  }
   svg {
-    path {
-      fill: #2e3456;
+    g {
+      transition: 0.3s ease;
+      path {
+        fill: var(--primary-color);
+      }
     }
   }
   p {
     @include font(14px, 116.3%, 500, rgba($color: #000, $alpha: 0.5));
     letter-spacing: -0.01em;
+    transition: 0.3s ease;
   }
   &.link {
     border-top: 1px solid #e6e7eb;
@@ -22,6 +41,7 @@
     right: 0;
     top: 18px;
     path {
+      transition: 0.3s ease;
       fill: #c0c2cc;
     }
   }

@@ -10,7 +10,8 @@ export default function Products() {
       <div className={cls.head}>
         <h2>Fresh Fruit</h2>
         <div>
-          See all <ArrowRightSvg />
+          <p>See all </p>
+          <ArrowRightSvg />
         </div>
       </div>
       <div className={cls.items}>

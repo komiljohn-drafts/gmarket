@@ -37,24 +37,6 @@ const widgetData = [
     btnTextColor: '#2F8CF6',
     src: '/images/widget-4.png',
   },
-  {
-    id: 5,
-    title: 'Sale Orange',
-    subtitle: 'Promocode down',
-    hasBtn: true,
-    btnText: 'orange20',
-    textColor: '#FFE1CF',
-    btnTextColor: '#E5712D',
-    src: '/images/widget-1.png',
-  },
-  {
-    id: 6,
-    title: 'Tomato',
-    subtitle: 'Buy at affordable prices',
-    hasBtn: false,
-    textColor: '#FFCBC2',
-    src: '/images/widget-2.png',
-  },
 ]
 
 export default widgetData

@@ -7,9 +7,7 @@ export default function MenuItem({ data }) {
     <li className={`${cls.item} ${data.isLink && cls.link}`}>
       {data.icon}
       <p>{data.text}</p>
-      {/* <div className={cls.arrowIcon}> */}
       {data.isLink && <ArrowRightSvg />}
-      {/* </div> */}
     </li>
   )
 }
