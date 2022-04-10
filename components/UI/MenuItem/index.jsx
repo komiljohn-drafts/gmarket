@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowRightSvg, StoreSvg } from '../../../utils/svgs'
+import { ArrowRightSvg } from '../../../utils/svgs'
 import cls from './MenuItem.module.scss'
 
 export default function MenuItem({ data, activeItem, fn }) {

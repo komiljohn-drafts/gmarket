@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import ReactDropdown from 'react-dropdown'
 import { ArrowBottomSvg, FilterSvg } from '../../../utils/svgs'
 import cls from './Categories.module.scss'
-import 'react-dropdown/style.css'
 
 const categoriesData = [
   { id: 1, title: 'Pantrys', order: 1 },

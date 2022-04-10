@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { HamburgerSvg, NotificationSvg, PlusSvg, SettingSvg, ShareSvg, StoreSvg } from '/utils/svgs'
+import { HamburgerSvg, NotificationSvg, PlusSvg, SettingSvg, ShareSvg } from '/utils/svgs'
 import MenuItem from '../MenuItem'
 import { menuItemsData, menuActionsData } from './menuItemsData'
 import cls from './Sidebar.module.scss'
