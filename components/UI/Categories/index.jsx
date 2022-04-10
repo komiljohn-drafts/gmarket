@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import ReactDropdown from 'react-dropdown'
 import { ArrowBottomSvg, FilterSvg } from '../../../utils/svgs'
 import cls from './Categories.module.scss'
+import 'react-dropdown/style.css'
 
 const categoriesData = [
   { id: 1, title: 'Pantrys', order: 1 },
@@ -13,6 +15,7 @@ const categoriesData = [
 ]
 
 export default function Categories() {
+  const [selectedCategory, setSelectedCategory] = useState('')
   const [activeCategory, setActiveCategory] = useState(2)
 
   return (
@@ -32,8 +35,21 @@ export default function Categories() {
         ))}
       </ul>
       <div className={cls.more}>
-        <p>More</p>
-        <ArrowBottomSvg />
+        <div className={cls.icon}>
+          <ArrowBottomSvg />
+        </div>
+        <select
+          className={activeCategory === 8 && cls.active}
+          value={selectedCategory}
+          onChange={(e) => {
+            e.target.value === 'more' ? setActiveCategory(0) : setActiveCategory(8)
+            setSelectedCategory(e.target.value)
+          }}
+        >
+          <option value='more'>More</option>
+          <option value='Drink'>Drink</option>
+          <option value='Plov'>Plov</option>
+        </select>
       </div>
     </section>
   )

@@ -51,11 +51,16 @@
             opacity: 1;
           }
           p {
+            cursor: pointer;
             @include font(14px, 24px, 500, #000);
             letter-spacing: -0.01em;
             margin-left: 12px;
             border-bottom: 2px solid black;
             border-bottom-style: dotted;
+            transition: 0.1s ease;
+            &:hover {
+              border-bottom-color: transparent;
+            }
           }
         }
       }

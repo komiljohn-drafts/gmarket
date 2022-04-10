@@ -2,17 +2,15 @@
 
 .widgets {
   margin-bottom: 50px;
-  display: flex;
-  gap: 12px;
-  max-width: 100%;
-  overflow-x: hidden;
+  max-width: calc(100vw - 304px);
   .widget {
+    height: 150px;
     width: 250px;
     padding: 21px 24px 22px;
     border-radius: var(--border-radius);
-    position: relative;
-    background: url('/images/widget-1.png') no-repeat top center / cover;
-    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
     .title {
       @include font(22px, 116.3%, 700, #ffe1cf);
       letter-spacing: -0.01em;

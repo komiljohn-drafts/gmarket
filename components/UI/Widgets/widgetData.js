@@ -37,6 +37,16 @@ const widgetData = [
     btnTextColor: '#2F8CF6',
     src: '/images/widget-4.png',
   },
+  {
+    id: 5,
+    title: 'Sale 40%',
+    subtitle: 'Very tasty pasta',
+    hasBtn: true,
+    btnText: 'test40',
+    textColor: '#EFEBFF',
+    btnTextColor: '#7753F6',
+    src: '/images/widget-5.png',
+  },
 ]
 
 export default widgetData

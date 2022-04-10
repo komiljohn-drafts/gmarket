@@ -21,7 +21,12 @@ export default function Products() {
               <PercentSvg />
             </div>
             <div className={cls.heart}>
-              <HeartSvg />
+              <label>
+                <input type='checkbox' />
+                <span className={cls.label}>
+                  <HeartSvg />
+                </span>
+              </label>
             </div>
             <Image placeholder='blur' src={item.src} width={131} height={131} alt='product' />
             <h4>{item.title}</h4>

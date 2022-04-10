@@ -53,7 +53,22 @@
         position: absolute;
         top: 22px;
         right: 22px;
-        cursor: pointer;
+        & label {
+          cursor: pointer;
+          input[type='checkbox'] {
+            display: none;
+            &:checked + .label {
+              svg {
+                g {
+                  opacity: 1;
+                  path {
+                    fill: #d21234;
+                  }
+                }
+              }
+            }
+          }
+        }
         svg g {
           transition: 0.3s ease;
         }
