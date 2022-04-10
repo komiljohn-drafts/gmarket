@@ -7,7 +7,7 @@ import cls from './Sidebar.module.scss'
 
 export default function Sidebar() {
   return (
-    <aside>
+    <aside className={cls.sidebar}>
       <div className={cls.hamburger}>
         <HamburgerSvg />
         <p>GMarket</p>

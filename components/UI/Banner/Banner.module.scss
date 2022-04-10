@@ -3,6 +3,7 @@
 .wrapper {
   @include flex(_, space-between, inherit);
   gap: 10px;
+  margin-bottom: 20px;
   .banner {
     flex-grow: 1;
     .image {
@@ -23,7 +24,7 @@
       border-top: none;
       border-bottom-left-radius: var(--border-radius);
       border-bottom-right-radius: var(--border-radius);
-      padding: 33px 22px;
+      padding: 30px 22px;
       @include flex;
       .text {
         @include flex(_, center);
@@ -50,10 +51,11 @@
             opacity: 1;
           }
           p {
-            @include font(14px, 116.3%, 500, #000);
+            @include font(14px, 24px, 500, #000);
             letter-spacing: -0.01em;
             margin-left: 12px;
-            text-decoration: dotted;
+            border-bottom: 2px solid black;
+            border-bottom-style: dotted;
           }
         }
       }
@@ -77,6 +79,10 @@
       flex-grow: 1;
       border-radius: var(--border-radius);
       @include flex(column, center);
+      p {
+        color: rgba($color: #2e3456, $alpha: 0.3);
+        margin-top: 8px;
+      }
       &.active {
         background: var(--primary-color);
         svg {
@@ -90,9 +96,6 @@
         p {
           color: #fff;
         }
-      }
-      p {
-        margin-top: 8px;
       }
     }
   }
