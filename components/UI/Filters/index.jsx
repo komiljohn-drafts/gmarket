@@ -9,14 +9,25 @@ import {
   StopwatchSvg,
 } from '../../../utils/svgs'
 import cls from './Filters.module.scss'
+import { motion } from 'framer-motion'
 
 export default function Filters() {
   return (
     <div className={cls.filters}>
-      <div className={cls.goback}>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.3 }}
+        className={cls.goback}
+      >
         <ArrowLeftSvg />
-      </div>
-      <div className={cls.place}>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.4 }}
+        className={cls.place}
+      >
         <div className={cls.location}>
           <LocationSvg />
         </div>
@@ -28,8 +39,13 @@ export default function Filters() {
         <div className={cls.arrow}>
           <ArrowBottomSvg />
         </div>
-      </div>
-      <div className={cls.search}>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5 }}
+        className={cls.search}
+      >
         <div className={cls.loupe}>
           <SearchSvg />
         </div>
@@ -37,19 +53,29 @@ export default function Filters() {
         <div className={cls.filter}>
           <FilterSvg />
         </div>
-      </div>
-      <div className={cls.time}>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.6 }}
+        className={cls.time}
+      >
         <div>
           <StopwatchSvg />
           <p>By 09:00 — 23:00</p>
         </div>
-      </div>
-      <div className={cls.price}>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.7 }}
+        className={cls.price}
+      >
         <div>
           <BoxSvg />
         </div>
         <p>$230.80</p>
-      </div>
+      </motion.div>
     </div>
   )
 }

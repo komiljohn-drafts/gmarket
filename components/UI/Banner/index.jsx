@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { BookmarkSvg, DeliverSvg, InfoSvg, RecipeSvg, StarSvg, StoreSvg } from '../../../utils/svgs'
 import cls from './Banner.module.scss'
 import bannerImage from '/public/images/banner.png'
+import { motion } from 'framer-motion'
 
 const optionsData = [
   {
@@ -24,7 +25,12 @@ export default function Banner() {
 
   return (
     <section className={cls.wrapper}>
-      <div className={cls.banner}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.9 }}
+        className={cls.banner}
+      >
         <div className={cls.image}>
           <Image placeholder='blur' layout='responsive' src={bannerImage} alt='banner' />
           <div>
@@ -52,8 +58,13 @@ export default function Banner() {
             <p>4.5</p>
           </div>
         </div>
-      </div>
-      <div className={cls.options}>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+        className={cls.options}
+      >
         {optionsData.map((item) => (
           <div
             key={item.id}
@@ -64,7 +75,7 @@ export default function Banner() {
             <p>{item.text}</p>
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }

@@ -3,6 +3,11 @@
 .widgets {
   margin-bottom: 50px;
   max-width: calc(100vw - 304px);
+  .swiper {
+    &-wrapper {
+      transition-timing-function: linear;
+    }
+  }
   .widget {
     height: 150px;
     width: 250px;

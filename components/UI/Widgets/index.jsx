@@ -2,6 +2,7 @@ import React from 'react'
 import cls from './Widgets.module.scss'
 import widgetData from './widgetData'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { motion } from 'framer-motion'
 
 import 'swiper/css'
 
@@ -11,10 +12,13 @@ export default function Widgets() {
   return (
     <section className={cls.widgets}>
       <Swiper
+        className='swiper'
         slidesPerView={4.4}
         loop={true}
+        speed={3000}
         autoplay={{
-          delay: 2500,
+          delay: 0,
+          delay: 2000,
           disableOnInteraction: false,
         }}
         breakpoints={{
@@ -24,9 +28,12 @@ export default function Widgets() {
         }}
         modules={[Autoplay]}
       >
-        {widgetData.map((item) => (
+        {widgetData.map((item, index) => (
           <SwiperSlide key={item.id}>
-            <div
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 + (1 - index * 0.1) }}
               className={cls.widget}
               style={{
                 background: `url(${item.src})`,
@@ -45,7 +52,7 @@ export default function Widgets() {
                   </button>
                 )}
               </div>
-            </div>
+            </motion.div>
           </SwiperSlide>
         ))}
       </Swiper>

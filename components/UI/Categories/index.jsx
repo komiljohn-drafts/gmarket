@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ArrowBottomSvg, FilterSvg } from '../../../utils/svgs'
 import cls from './Categories.module.scss'
+import { motion } from 'framer-motion'
 
 const categoriesData = [
   { id: 1, title: 'Pantrys', order: 1 },
@@ -18,21 +19,34 @@ export default function Categories() {
 
   return (
     <section className={cls.categories}>
-      <div className={cls.filter}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.3 }}
+        className={cls.filter}
+      >
         <FilterSvg />
-      </div>
+      </motion.div>
       <ul className={cls.list}>
-        {categoriesData.map((item) => (
-          <li
+        {categoriesData.map((item, index) => (
+          <motion.li
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.4 + index * 0.1 }}
             onClick={() => setActiveCategory(item.order)}
             className={activeCategory === item.order && cls.active}
             key={item.id}
           >
             {item.title}
-          </li>
+          </motion.li>
         ))}
       </ul>
-      <div className={cls.more}>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2.2 }}
+        className={cls.more}
+      >
         <div className={cls.icon}>
           <ArrowBottomSvg />
         </div>
@@ -48,7 +62,7 @@ export default function Categories() {
           <option value='Drink'>Drink</option>
           <option value='Plov'>Plov</option>
         </select>
-      </div>
+      </motion.div>
     </section>
   )
 }
