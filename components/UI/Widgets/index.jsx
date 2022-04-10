@@ -1,18 +1,17 @@
-import Image from 'next/image'
 import React from 'react'
-import { RecipeSvg, StoreSvg } from '../../../utils/svgs'
 import cls from './Widgets.module.scss'
 import widgetData from './widgetData'
 
 export default function Widgets() {
   return (
     <section className={cls.widgets}>
-      {widgetData.map((item, index) => (
+      {widgetData.map((item) => (
         <div
           key={item.id}
           className={cls.widget}
           style={{
             backgroundImage: `url(${item.src})`,
+            boxShadow: `${item.textColor} 0px 10px 10px -10px`,
           }}
         >
           <h3 style={{ color: item.textColor }} className={cls.title}>

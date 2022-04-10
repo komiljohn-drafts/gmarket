@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { ArrowRightSvg, FilterSvg, HeartSvg, PercentSvg, PlusSvg } from '../../../utils/svgs'
+import { ArrowRightSvg, HeartSvg, PercentSvg, PlusSvg } from '../../../utils/svgs'
 import cls from './Products.module.scss'
 import productsData from './productsData'
 
@@ -23,7 +23,7 @@ export default function Products() {
             <div className={cls.heart}>
               <HeartSvg />
             </div>
-            <Image src={item.src} width={131} height={131} alt='product' />
+            <Image placeholder='blur' src={item.src} width={131} height={131} alt='product' />
             <h4>{item.title}</h4>
             <div className={cls.action}>
               <p>{item.price}</p>

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { BookmarkSvg, DeliverSvg, InfoSvg, RecipeSvg, StarSvg, StoreSvg } from '../../../utils/svgs'
 import cls from './Banner.module.scss'
 import bannerImage from '/public/images/banner.png'
@@ -9,17 +9,19 @@ const optionsData = [
     id: 1,
     text: 'Shop',
     icon: <StoreSvg />,
-    active: true,
+    order: 1,
   },
   {
     id: 2,
     text: 'Recipes',
     icon: <RecipeSvg />,
-    active: false,
+    order: 2,
   },
 ]
 
 export default function Banner() {
+  const [activeOption, setActiveOption] = useState(1)
+
   return (
     <section className={cls.wrapper}>
       <div className={cls.banner}>
@@ -53,7 +55,11 @@ export default function Banner() {
       </div>
       <div className={cls.options}>
         {optionsData.map((item) => (
-          <div key={item.id} className={`${cls.item} ${item.active && cls.active}`}>
+          <div
+            key={item.id}
+            onClick={() => setActiveOption(item.order)}
+            className={`${cls.item} ${activeOption === item.order && cls.active}`}
+          >
             {item.icon}
             <p>{item.text}</p>
           </div>

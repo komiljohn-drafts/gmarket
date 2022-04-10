@@ -6,6 +6,28 @@
   @include flex(_, flex-start);
   gap: 24px;
   transition: 0.3s ease;
+  &.active {
+    svg {
+      g {
+        opacity: 1;
+        transition: 0.3s ease;
+        path {
+          fill: #16aa16;
+        }
+      }
+    }
+    p {
+      color: #000;
+    }
+    &:hover {
+      p {
+        color: #000;
+      }
+      svg g {
+        opacity: 1;
+      }
+    }
+  }
   &:hover {
     cursor: pointer;
     p {
@@ -24,6 +46,7 @@
     g {
       transition: 0.3s ease;
       path {
+        transition: 0.3s ease;
         fill: var(--primary-color);
       }
     }

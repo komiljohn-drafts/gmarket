@@ -35,15 +35,19 @@
         color: #000;
       }
     }
-    .more {
-      @include flex(_, center);
-      p {
-        margin-right: 6px;
-      }
-      svg {
-        path {
-          fill: rgba($color: #2e3456, $alpha: 0.5);
-        }
+  }
+  .more {
+    padding: 17px 24px;
+    border-radius: var(--border-radius);
+    @include font(14px, 116.3%, 500, rgba($color: #000000, $alpha: 0.5));
+    background: rgba(192, 194, 204, 0.18);
+    @include flex(_, center);
+    p {
+      margin-right: 6px;
+    }
+    svg {
+      path {
+        fill: rgba($color: #2e3456, $alpha: 0.5);
       }
     }
   }

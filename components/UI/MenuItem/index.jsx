@@ -2,9 +2,9 @@ import React from 'react'
 import { ArrowRightSvg, StoreSvg } from '../../../utils/svgs'
 import cls from './MenuItem.module.scss'
 
-export default function MenuItem({ data }) {
+export default function MenuItem({ data, activeItem, fn }) {
   return (
-    <li className={`${cls.item} ${data.isLink && cls.link}`}>
+    <li onClick={fn} className={`${cls.item} ${data.isLink && cls.link} ${activeItem === data.order && cls.active}`}>
       {data.icon}
       <p>{data.text}</p>
       {data.isLink && <ArrowRightSvg />}

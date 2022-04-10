@@ -22,8 +22,8 @@ export default function Filters() {
         </div>
         <select>
           <option>2972 Westheimer Rd. Santa Ana</option>
-          <option>2973 Westheimer Rd. Santa Ana</option>
-          <option>2974 Westheimer Rd. Santa Ana</option>
+          <option>1600 Amphitheatre Parkway in Mountain View, California</option>
+          <option>1 Hacker Way in Menlo Park, CA 94025</option>
         </select>
         <div className={cls.arrow}>
           <ArrowBottomSvg />

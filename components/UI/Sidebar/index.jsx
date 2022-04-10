@@ -1,11 +1,13 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { HamburgerSvg, NotificationSvg, PlusSvg, SettingSvg, ShareSvg, StoreSvg } from '/utils/svgs'
 import MenuItem from '../MenuItem'
 import { menuItemsData, menuActionsData } from './menuItemsData'
 import cls from './Sidebar.module.scss'
 
 export default function Sidebar() {
+  const [activeItem, setActiveItem] = useState(1)
+
   return (
     <aside className={cls.sidebar}>
       <div className={cls.hamburger}>
@@ -41,12 +43,12 @@ export default function Sidebar() {
         </div>
         <ul className={cls.items}>
           {menuItemsData.map((item) => (
-            <MenuItem data={item} key={item.id} />
+            <MenuItem data={item} activeItem={activeItem} fn={() => setActiveItem(item.order)} key={item.id} />
           ))}
         </ul>
         <ul className={cls.actionItems}>
           {menuActionsData.map((item) => (
-            <MenuItem data={item} key={item.id} />
+            <MenuItem fn={() => {}} data={item} key={item.id} />
           ))}
         </ul>
       </div>
