@@ -1,0 +1,99 @@
+@import '../../../styles/mixins';
+
+.wrapper {
+  @include flex(_, space-between, inherit);
+  gap: 10px;
+  .banner {
+    flex-grow: 1;
+    .image {
+      position: relative;
+      div {
+        bottom: -10px;
+        left: 18px;
+        background: rgba(255, 255, 255, 0.58);
+        backdrop-filter: blur(24.4645px);
+        border-radius: 15px;
+        padding: 8.75px;
+        position: absolute;
+        height: 70px;
+      }
+    }
+    .action {
+      border: 1px solid #d0d3db;
+      border-top: none;
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+      padding: 33px 22px;
+      @include flex;
+      .text {
+        @include flex(_, center);
+        h2 {
+          @include font(28px, 28px, 500, #000);
+          letter-spacing: -0.02em;
+          margin-right: 55px;
+        }
+        div {
+          @include flex(_, center);
+          position: relative;
+          margin-right: 59px;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: -30px;
+            width: 7px;
+            height: 7px;
+            border-radius: 4px;
+            background: #d0d3db;
+          }
+          svg g {
+            opacity: 1;
+          }
+          p {
+            @include font(14px, 116.3%, 500, #000);
+            letter-spacing: -0.01em;
+            margin-left: 12px;
+            text-decoration: dotted;
+          }
+        }
+      }
+      .rate {
+        @include flex(_, center);
+        p {
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+  .options {
+    padding: 10px;
+    width: 138px;
+    border-radius: var(--border-radius);
+    @include flex(column);
+    background: #fff;
+    box-shadow: 0px 2px 2px rgba(223, 226, 235, 0.79);
+    .item {
+      width: 100%;
+      flex-grow: 1;
+      border-radius: var(--border-radius);
+      @include flex(column, center);
+      &.active {
+        background: var(--primary-color);
+        svg {
+          g {
+            opacity: 1;
+          }
+          path {
+            fill: #fff;
+          }
+        }
+        p {
+          color: #fff;
+        }
+      }
+      p {
+        margin-top: 8px;
+      }
+    }
+  }
+}
