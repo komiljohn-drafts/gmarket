@@ -1,6 +1,13 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
-import { BookmarkSvg, DeliverSvg, InfoSvg, RecipeSvg, StarSvg, StoreSvg } from '../../../utils/svgs'
+import {
+  BookmarkSvg,
+  DeliverSvg,
+  InfoSvg,
+  RecipeSvg,
+  StarSvg,
+  StoreSvg,
+} from '../../../utils/svgs'
 import cls from './Banner.module.scss'
 import bannerImage from '/public/images/banner.png'
 import { motion } from 'framer-motion'
@@ -32,9 +39,19 @@ export default function Banner() {
         className={cls.banner}
       >
         <div className={cls.image}>
-          <Image placeholder='blur' layout='responsive' src={bannerImage} alt='banner' />
+          <Image
+            placeholder='blur'
+            layout='responsive'
+            src={bannerImage}
+            alt='banner'
+          />
           <div>
-            <Image src='/icons/logo.png' alt='logo' width={52.5} height={52.5} />
+            <Image
+              src='/icons/logo.png'
+              alt='logo'
+              width={52.5}
+              height={52.5}
+            />
           </div>
         </div>
         <div className={cls.action}>
@@ -69,7 +86,9 @@ export default function Banner() {
           <div
             key={item.id}
             onClick={() => setActiveOption(item.order)}
-            className={`${cls.item} ${activeOption === item.order && cls.active}`}
+            className={`${cls.item} ${
+              activeOption === item.order ? cls.active : ''
+            }`}
           >
             {item.icon}
             <p>{item.text}</p>

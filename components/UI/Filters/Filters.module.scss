@@ -15,7 +15,8 @@
     transition: 0.3s ease;
     cursor: pointer;
     &:hover {
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+        rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
     }
   }
   .place {
@@ -39,8 +40,13 @@
       outline: none;
       transition: 0.3s ease;
       font-family: 'Inter', sans-serif;
+      @media screen and (max-width: 1420px) {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
       &:focus {
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+          rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
       }
       option {
         padding: 15px;
@@ -51,11 +57,17 @@
       top: 20px;
       left: 20px;
       position: absolute;
+      @media screen and (max-width: 1420px) {
+        left: 13px;
+      }
     }
     .arrow {
       position: absolute;
       top: 20px;
       right: 20px;
+      @media screen and (max-width: 1420px) {
+        right: 13px;
+      }
     }
   }
   .search {
@@ -71,6 +83,9 @@
       letter-spacing: -0.02em;
       @include font(14px, 16px, 500);
       padding: 18px 80px 16px 57px;
+      @media screen and (max-width: 1420px) {
+        padding: 18px 60px 16px 40px;
+      }
       &::placeholder {
         font-family: 'Inter', sans-serif;
         @include font(14px, 16px, 500, rgba($color: #000, $alpha: 0.3));
@@ -79,7 +94,8 @@
       height: 100%;
       &:focus,
       &:hover {
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+          rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
       }
     }
     &::after {
@@ -90,16 +106,25 @@
       width: 1px;
       height: 36px;
       background: rgba($color: #2e3456, $alpha: 0.12);
+      @media screen and (max-width: 1420px) {
+        right: 48px;
+      }
     }
     .loupe {
       position: absolute;
       top: 20px;
       left: 20px;
+      @media screen and (max-width: 1420px) {
+        left: 13px;
+      }
     }
     .filter {
       position: absolute;
       top: 20px;
       right: 20px;
+      @media screen and (max-width: 1420px) {
+        right: 13px;
+      }
     }
   }
   .time {

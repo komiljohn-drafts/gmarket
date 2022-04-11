@@ -34,7 +34,7 @@ export default function Categories() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4 + index * 0.1 }}
             onClick={() => setActiveCategory(item.order)}
-            className={activeCategory === item.order && cls.active}
+            className={activeCategory === item.order ? cls.active : ''}
             key={item.id}
           >
             {item.title}
@@ -51,10 +51,12 @@ export default function Categories() {
           <ArrowBottomSvg />
         </div>
         <select
-          className={activeCategory === 8 && cls.active}
+          className={activeCategory === 8 ? cls.active : ''}
           value={selectedCategory}
           onChange={(e) => {
-            e.target.value === 'more' ? setActiveCategory(0) : setActiveCategory(8)
+            e.target.value === 'more'
+              ? setActiveCategory(0)
+              : setActiveCategory(8)
             setSelectedCategory(e.target.value)
           }}
         >

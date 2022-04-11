@@ -53,6 +53,7 @@
         position: absolute;
         top: 22px;
         right: 22px;
+        z-index: 1;
         & label {
           cursor: pointer;
           input[type='checkbox'] {

@@ -13,8 +13,9 @@ export default function Widgets() {
     <section className={cls.widgets}>
       <Swiper
         className='swiper'
-        slidesPerView={4.4}
-        loop={true}
+        slidesPerView={4}
+        spaceBetween={20}
+        loop={false}
         speed={3000}
         autoplay={{
           delay: 0,
@@ -22,11 +23,20 @@ export default function Widgets() {
           disableOnInteraction: false,
         }}
         breakpoints={{
+          1140: {
+            slidesPerView: 3.7,
+          },
+          1360: {
+            slidesPerView: 4.1,
+          },
           1440: {
+            slidesPerView: 4.5,
+          },
+          1580: {
             slidesPerView: 5,
           },
         }}
-        modules={[Autoplay]}
+        // modules={[Autoplay]}
       >
         {widgetData.map((item, index) => (
           <SwiperSlide key={item.id}>
@@ -42,12 +52,24 @@ export default function Widgets() {
               <h3 style={{ color: item.textColor }} className={cls.title}>
                 {item.title}
               </h3>
-              <div style={{ width: !item.hasBtn && '100px' }}>
-                <p style={{ color: item.textColor, marginBottom: !item.hasBtn && 0 }} className={cls.subtitle}>
+              <div style={{ width: !item.hasBtn ? '100px' : 'initial' }}>
+                <p
+                  style={{
+                    color: item.textColor,
+                    marginBottom: !item.hasBtn ? 0 : 22,
+                  }}
+                  className={cls.subtitle}
+                >
                   {item.subtitle}
                 </p>
                 {item.hasBtn && (
-                  <button style={{ backgroundColor: item.textColor, color: item.btnTextColor }} className={cls.btn}>
+                  <button
+                    style={{
+                      backgroundColor: item.textColor,
+                      color: item.btnTextColor,
+                    }}
+                    className={cls.btn}
+                  >
                     {item.btnText}
                   </button>
                 )}

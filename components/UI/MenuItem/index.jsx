@@ -10,7 +10,9 @@ export default function MenuItem({ data, activeItem, fn }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.7 + data.order * 0.05 }}
       onClick={fn}
-      className={`${cls.item} ${data.isLink && cls.link} ${activeItem === data.order && cls.active}`}
+      className={`${cls.item} ${data.isLink ? cls.link : ''} ${
+        activeItem === data.order ? cls.active : ''
+      }`}
     >
       {data.icon}
       <p>{data.text}</p>
