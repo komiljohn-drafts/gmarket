@@ -3,6 +3,9 @@
 .widgets {
   margin-bottom: 50px;
   max-width: calc(100vw - 304px);
+  @media screen and (max-width: 992px) {
+    max-width: calc(100vw - 30px);
+  }
   .swiper {
     &-wrapper {
       transition-timing-function: linear;

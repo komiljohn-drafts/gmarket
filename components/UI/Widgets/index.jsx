@@ -23,8 +23,26 @@ export default function Widgets() {
           disableOnInteraction: false,
         }}
         breakpoints={{
+          350: {
+            slidesPerView: 1.2,
+          },
+          420: {
+            slidesPerView: 1.5,
+          },
+          520: {
+            slidesPerView: 2,
+          },
+          600: {
+            slidesPerView: 2.3,
+          },
+          800: {
+            slidesPerView: 3,
+          },
+          992: {
+            slidesPerView: 2.6,
+          },
           1140: {
-            slidesPerView: 3.7,
+            slidesPerView: 3.2,
           },
           1360: {
             slidesPerView: 4.1,

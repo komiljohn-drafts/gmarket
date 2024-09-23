@@ -1,6 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
-import { ArrowRightSvg, HeartSvg, PercentSvg, PlusSvg } from '../../../utils/svgs'
+import {
+  ArrowRightSvg,
+  HeartSvg,
+  PercentSvg,
+  PlusSvg,
+} from '../../../utils/svgs'
 import cls from './Products.module.scss'
 import productsData from './productsData'
 import { motion } from 'framer-motion'
@@ -45,11 +50,20 @@ export default function Products() {
                 </span>
               </label>
             </div>
-            <Image placeholder='blur' src={item.src} width={131} height={131} alt='product' />
+            <Image
+              placeholder='blur'
+              src={item.src}
+              width={131}
+              height={131}
+              alt='product'
+            />
             <h4>{item.title}</h4>
             <div className={cls.action}>
               <p>{item.price}</p>
-              <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <PlusSvg />
               </motion.button>
             </div>

@@ -23,6 +23,9 @@
     position: relative;
     flex-grow: 1;
     z-index: 2;
+    @media screen and (max-width: 650px) {
+      display: none;
+    }
     select {
       padding-left: 53px;
       padding-right: 53px;
@@ -35,6 +38,10 @@
       @include font(14px, 16px, 500);
       -webkit-appearance: none;
       -moz-appearance: none;
+      appearance: inherit;
+      text-overflow: ellipsis;
+      word-wrap: nowrap;
+      overflow: hidden;
       text-indent: 1px;
       text-overflow: '';
       outline: none;
@@ -130,6 +137,9 @@
   .time {
     width: 210px;
     padding: 10px;
+    @media screen and (max-width: 1305px) {
+      display: none;
+    }
     div {
       @include flex;
       padding: 10px 20px;

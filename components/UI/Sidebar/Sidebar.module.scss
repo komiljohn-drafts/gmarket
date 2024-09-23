@@ -1,6 +1,9 @@
 @import '../../../styles/mixins';
 
 .sidebar {
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
   .hamburger {
     border-radius: var(--border-radius);
     background: #fff;

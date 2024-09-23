@@ -11,6 +11,8 @@ const categoriesData = [
   { id: 5, title: 'Beverange', order: 5 },
   { id: 6, title: 'Snacks', order: 6 },
   { id: 7, title: 'Households', order: 7 },
+  { id: 8, title: 'Drink', order: 8 },
+  { id: 9, title: 'Plov', order: 9 },
 ]
 
 export default function Categories() {
@@ -27,6 +29,7 @@ export default function Categories() {
       >
         <FilterSvg />
       </motion.div>
+
       <ul className={cls.list}>
         {categoriesData.map((item, index) => (
           <motion.li
@@ -41,30 +44,6 @@ export default function Categories() {
           </motion.li>
         ))}
       </ul>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.2 }}
-        className={cls.more}
-      >
-        <div className={cls.icon}>
-          <ArrowBottomSvg />
-        </div>
-        <select
-          className={activeCategory === 8 ? cls.active : ''}
-          value={selectedCategory}
-          onChange={(e) => {
-            e.target.value === 'more'
-              ? setActiveCategory(0)
-              : setActiveCategory(8)
-            setSelectedCategory(e.target.value)
-          }}
-        >
-          <option value='more'>More</option>
-          <option value='Drink'>Drink</option>
-          <option value='Plov'>Plov</option>
-        </select>
-      </motion.div>
     </section>
   )
 }

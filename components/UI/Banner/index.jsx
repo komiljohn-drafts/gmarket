@@ -56,16 +56,16 @@ export default function Banner() {
         </div>
         <div className={cls.action}>
           <div className={cls.text}>
-            <h2>Wallmart store</h2>
-            <div>
+            <h2 className='truncate'>Wallmart store</h2>
+            <div className={cls.info}>
               <InfoSvg />
-              <p>Store info</p>
+              <p className='truncate'>Store info</p>
             </div>
-            <div>
+            <div className={cls.delivery}>
               <DeliverSvg />
-              <p>Store delivery time</p>
+              <p className='truncate'>Store delivery time</p>
             </div>
-            <div>
+            <div className={cls.saved}>
               <BookmarkSvg />
               <p>Saved</p>
             </div>
